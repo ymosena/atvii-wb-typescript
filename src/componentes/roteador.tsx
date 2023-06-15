@@ -2,6 +2,10 @@ import { Component } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
 import ListaCliente from "./listaCliente";
+import ListaProduto from "./listaProdutos";
+import ListaServicos from "./listaServicos";
+import FormularioCadastroProduto from "./formularioCadastroProduto";
+import FormularioCadastroServico from "./formularioCadastroServico";
 
 type state = {
     tela: string
@@ -24,20 +28,34 @@ export default class Roteador extends Component<{}, state> {
         })
     }
 
+    // document.addEventListener('', function() {
+    //     var elems = document.querySelectorAll('select');
+    //     var instances = M.FormSelect.init(elems, options);
+    //   });
+
     render() {
-        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="purple lighten-4" botoes={['Clientes', 'Cadastros']} />
+        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="red lighten-2" botoes={['Clientes', 'Produtos', 'Serviços']} />
         if (this.state.tela === 'Clientes') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaCliente tema="purple lighten-4" />
+                    <ListaCliente tema="teal darken-3" />
                 </>
             )
-        } else {
+        } 
+        else if (this.state.tela === 'Produtos'){
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroCliente tema="purple lighten-4" />
+                    <ListaProduto tema="teal darken-3" />
+                </>
+            )
+        }
+        else {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaServicos tema="teal darken-3" />
                 </>
             )
         }
