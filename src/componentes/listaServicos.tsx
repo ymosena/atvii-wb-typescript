@@ -4,6 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 
 type props = {
     tema: string
+    seletorView: Function
 }
 
 export default class ListaServicos extends Component<props> {
@@ -40,7 +41,7 @@ export default class ListaServicos extends Component<props> {
                     </tr>
                     </tbody>
                 </table>
-                <a className="btn-floating btn-large right waves-effect waves-light red lighten-1 "><i className="material-icons">add</i></a> 
+                <a onClick={(e) => this.props.seletorView('FormularioServico', e)} className="btn-floating btn-large right waves-effect waves-light red lighten-1 "><i className="material-icons">add</i></a> 
                 </div>
             </div>
         )

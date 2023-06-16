@@ -28,18 +28,13 @@ export default class Roteador extends Component<{}, state> {
         })
     }
 
-    // document.addEventListener('', function() {
-    //     var elems = document.querySelectorAll('select');
-    //     var instances = M.FormSelect.init(elems, options);
-    //   });
-
     render() {
         let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="red lighten-2" botoes={['Clientes', 'Produtos', 'Serviços']} />
         if (this.state.tela === 'Clientes') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaCliente tema="teal darken-3" />
+                    <ListaCliente tema="red lighten-2" seletorView={this.selecionarView} />
                 </>
             )
         } 
@@ -47,7 +42,31 @@ export default class Roteador extends Component<{}, state> {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaProduto tema="teal darken-3" />
+                    <ListaProduto tema="red lighten-2" seletorView={this.selecionarView} />
+                </>
+            )
+        }
+        else if (this.state.tela === 'FormularioCliente'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroCliente tema="red lighten-2" />
+                </>
+            )
+        }
+        else if (this.state.tela === 'FormularioProduto'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroProduto tema="red lighten-2" />
+                </>
+            )
+        }
+        else if (this.state.tela === 'FormularioServico'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroServico tema="red lighten-2" />
                 </>
             )
         }
@@ -55,7 +74,7 @@ export default class Roteador extends Component<{}, state> {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaServicos tema="teal darken-3" />
+                    <ListaServicos seletorView={this.selecionarView} tema="red lighten-2" />
                 </>
             )
         }

@@ -18,19 +18,10 @@ export default class FormularioCadastroCliente extends Component<props> {
                             <input id="first_name" type="text" className="validate" />
                             <label htmlFor="first_name">Nome</label>
                         </div>
-                        <div className="input-field col s12">
-                            <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                            </select>
-                            <label>Materialize Select</label>
-                        </div>
-                        <div className="input-field col s12">
+                    <div className="input-field col s12">
                             <input id="last_name" type="text" className="validate" />
                             <label htmlFor="last_name">Sobrenome</label>
-                        </div>
+                    </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
