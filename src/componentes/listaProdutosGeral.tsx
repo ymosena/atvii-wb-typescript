@@ -8,7 +8,7 @@ type props = {
     seletorView: Function
 }
 
-export default class ListaProduto extends Component<props> {
+export default class ListaProdutoGeral extends Component<props> {
     render() {
         let estilo = `collection-item active ${this.props.tema}`
         return (

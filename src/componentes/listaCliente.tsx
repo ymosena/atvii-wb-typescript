@@ -16,6 +16,16 @@ export default class ListaCliente extends Component<props> {
             <div className="container">
                 <a onClick={(e) => this.props.seletorView('FormularioCliente', e)} className="btn-floating btn-large right waves-effect waves-light red lighten-1 "><i className="material-icons">add</i></a> 
                 <h4>Lista Clientes</h4>
+                <div className="row">
+                    <div className="col s12">
+                    <ul className="tabs">
+                        <li className="tab col s3"><a onClick={(e) => this.props.seletorView('MaiorConsumoQtd', e)}>Maior Consumo Qtd</a></li>
+                        <li className="tab col s3"><a onClick={(e) => this.props.seletorView('MaiorConsumoValor', e)}>Maior Consumo Valor</a></li>
+                        <li className="tab col s3"><a onClick={(e) => this.props.seletorView('MaiorConsumoGenero', e)}>Maior Consumo Gênero</a></li>
+                        <li className="tab col s3"><a onClick={(e) => this.props.seletorView('MenorConsumo', e)}>Menor Consumo</a></li>
+                    </ul>
+                    </div>
+                </div>
                 <div className="card-panel red lighten-5">
                 <ul className="collection">
                         <li className="collection-item avatar ">

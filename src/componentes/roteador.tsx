@@ -6,6 +6,14 @@ import ListaProduto from "./listaProdutos";
 import ListaServicos from "./listaServicos";
 import FormularioCadastroProduto from "./formularioCadastroProduto";
 import FormularioCadastroServico from "./formularioCadastroServico";
+import ListaClienteMenorConsumo from "./listaClienteMenor";
+import ListaClienteQtd from "./listaClienteQtd"
+import ListaClienteValor from "./listaClienteValor";
+import ListaClienteGenero from "./listaClienteGenero";
+import ListaProdutoGeral from "./listaProdutosGeral";
+import ListaProdutoGenero from "./listaProdutosGenero";
+import ListaServicosGenero from "./listaServicosGenero";
+import ListaServicosGeral from "./listaServicosGeral";
 
 type state = {
     tela: string
@@ -67,6 +75,70 @@ export default class Roteador extends Component<{}, state> {
                 <>
                     {barraNavegacao}
                     <FormularioCadastroServico tema="red lighten-2" />
+                </>
+            )
+        }
+        else if (this.state.tela === 'MaiorConsumoGenero'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaClienteGenero tema="red lighten-2" seletorView={this.selecionarView} />
+                </>
+            )
+        }
+        else if (this.state.tela === 'MaiorConsumoQtd'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaClienteQtd tema="red lighten-2" seletorView={this.selecionarView}/>
+                </>
+            )
+        }
+        else if (this.state.tela === 'MaiorConsumoValor'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaClienteValor tema="red lighten-2" seletorView={this.selecionarView} />
+                </>
+            )
+        }
+        else if (this.state.tela === 'MenorConsumo'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaClienteMenorConsumo tema="red lighten-2" seletorView={this.selecionarView}/>
+                </>
+            )
+        }
+        else if (this.state.tela === 'PMaisConsumidoG'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaProdutoGeral tema="red lighten-2" seletorView={this.selecionarView} />
+                </>
+            )
+        }
+        else if (this.state.tela === 'PMaisConsumidoGe'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaProdutoGenero tema="red lighten-2" seletorView={this.selecionarView}/>
+                </>
+            )
+        }
+        else if (this.state.tela === 'SMaisConsumidoG'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaServicosGeral tema="red lighten-2" seletorView={this.selecionarView} />
+                </>
+            )
+        }
+        else if (this.state.tela === 'SMaisConsumidoGe'){
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaServicosGenero tema="red lighten-2" seletorView={this.selecionarView} />
                 </>
             )
         }

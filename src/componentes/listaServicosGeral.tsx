@@ -7,7 +7,7 @@ type props = {
     seletorView: Function
 }
 
-export default class ListaServicos extends Component<props> {
+export default class ListaServicosGeral extends Component<props> {
     render() {
         let estilo = `collection-item active ${this.props.tema}`
         return (
